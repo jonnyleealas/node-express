@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const {people, users} = require('./fakeData')
+const {people} = require('./fakeData')
 
 app.get('/', (req, res) => {
     res.json(people)
