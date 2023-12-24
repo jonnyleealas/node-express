@@ -3,7 +3,11 @@ const app = express()
 const {people} = require('./fakeData')
 
 app.get('/', (req, res) => {
-    res.json(people)
+    const newPeople = people.map((person) => {
+        const {body} = person
+        return {body}
+    })
+    res.json(newPeople)
 })
 
 app.get('/minji', (req, res) => {
