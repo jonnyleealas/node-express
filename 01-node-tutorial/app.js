@@ -1,23 +1,23 @@
 const express = require('express')
 const app = express()
 const {people} = require('./fakeData')
+const diaper = people
 
-app.get('/', (req, res) => {
-    const newPeople = people.map((person) => {
-        const {body} = person
-        return {body}
-    })
-    res.json(newPeople)
+app.get('/homepage', (req, res) => {
+    res.status(200).send("<h1>Hi Bryan t(._.)t</h1>")
 })
 
-app.get('/minji', (req, res) => {
-    res.json(users)
+app.get('/secretroute', (req, res) => {
+    res.send('<h1>secret route</h1>')
 })
 
-app.all("*", (req, res) => {
-    res.send('<h1>PAGE NOT FOUND</h1>')
+app.get('/fakeapi', (req, res) => {
+    res.status(200).send(diaper)
+})
+app.get('*', (req, res) => {
+    res.send('<h1>Page not found</h1>')
 })
 
-app.listen(5000, () => {
+app.listen(9000, () => {
     console.log('listening on 5000')
 })
