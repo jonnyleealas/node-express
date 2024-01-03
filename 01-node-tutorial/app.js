@@ -5,7 +5,7 @@ const {people} = require('./fakedata')
 app.get('/este', (req, res) => {
     res.send('<h1>hello you fuckers</h1>')
 })
-
+// params can be added in url using req.params
 app.get('/:personId', (req, res) => {
 
     const {personId} = req.params
