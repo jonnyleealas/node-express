@@ -39,37 +39,19 @@ app.get('/api/people', (req, res) => {
     res.json(newPeople)
 })
 
-// app.get('/api/v1/query', (req, res) => {
-//     const {search, limit} = req.query
-//     let sortedPeople = [...people]
-    
-//     if(search){
-//         sortedPeople = sortedPeople.filter((people) => {
-//             return people.title.startsWith(search)
-//         })
-//     }
-
-//     if(limit){
-//         sortedPeople = sortedPeople.slice(0, Number(limit))
-//     }
-
-//     res.status(200).json(sortedPeople)
-// })
-
 app.get('/api/v1/query', (req, res) => {
     const {search, limit} = req.query
     let sortedPeople = [...people]
 
     if(search){
-        sortedPeople = sortedPeople.filter((people) => {
-            return people.title.startsWith(search)
+        sortedPeople = sortedPeople.filter((person) => {
+            return person.title.startsWith(search)
         })
     }
-
+    
     if(limit){
         sortedPeople = sortedPeople.slice(0, Number(limit))
     }
-
     res.status(200).json(sortedPeople)
 })
 
