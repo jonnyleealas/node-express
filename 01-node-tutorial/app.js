@@ -2,6 +2,10 @@ const express = require('express')
 const app = express()
 const { people } = require('./fakedata')
 
+app.get('/', (req, res) => {
+    res.status(200).send('<h1>Test page</h1>')
+})
+
 app.get('/este', (req, res) => {
     res.send('<h1>hello you fuckers</h1>')
 })
@@ -35,10 +39,27 @@ app.get('/api/people', (req, res) => {
     res.json(newPeople)
 })
 
+// app.get('/api/v1/query', (req, res) => {
+//     const {search, limit} = req.query
+//     let sortedPeople = [...people]
+    
+//     if(search){
+//         sortedPeople = sortedPeople.filter((people) => {
+//             return people.title.startsWith(search)
+//         })
+//     }
+
+//     if(limit){
+//         sortedPeople = sortedPeople.slice(0, Number(limit))
+//     }
+
+//     res.status(200).json(sortedPeople)
+// })
+
 app.get('/api/v1/query', (req, res) => {
     const {search, limit} = req.query
     let sortedPeople = [...people]
-    
+
     if(search){
         sortedPeople = sortedPeople.filter((people) => {
             return people.title.startsWith(search)
@@ -51,7 +72,6 @@ app.get('/api/v1/query', (req, res) => {
 
     res.status(200).json(sortedPeople)
 })
-
 
 app.get("*", (req, res) => {
     res.status(404).send("<h1>Page not found</h1>")
