@@ -5,7 +5,7 @@ let {people} = require('./fakeData')
 
 
 
-app.use(morgan('tiny'))
+app.use(express.static('./methods-public'))
 
 app.get('/api/people', (req, res) => {
     res.status(200).json({success: true, data: {people}})
