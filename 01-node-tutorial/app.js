@@ -14,8 +14,14 @@ app.get('/people', (req, res) => {
 }) 
 
 app.post('/login', (req, res) => {
-    console.log(req.body)
-    res.send('post route')
+    const {name} = req.body
+    
+    if(name === jonny){
+        return res.status(200).send(`welcome ${name} you are now logged in`)
+    } else {
+
+        res.send('no name provided')
+    }
 })
 
 app.listen('5000', () => {
