@@ -16,7 +16,7 @@ app.get('/people', (req, res) => {
 app.post('/login', (req, res) => {
     const {name} = req.body
     
-    if(name === jonny){
+    if(name){
         return res.status(200).send(`welcome ${name} you are now logged in`)
     } else {
 
