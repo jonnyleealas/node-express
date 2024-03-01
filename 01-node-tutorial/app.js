@@ -1,29 +1,19 @@
 const express = require('express')
 const app = express()
-const {people} = require('./fakeData')
+let { people } = require("./fakeData")
 
 app.use(express.static('./methods-public'))
-app.use(express.urlencoded({extended: false}))
+
 
 app.get('/', (req, res) => {
-    res.send('home')
+    res.send("home page")
 })
-
-app.get('/people', (req, res) => {
-    res.status(200).json({success: true, data: people})
-}) 
 
 app.post('/login', (req, res) => {
-    const {name} = req.body
-    
-    if(name){
-        return res.status(200).send(`welcome ${name} you are now logged in`)
-    } else {
-
-        res.send('no name provided')
-    }
+   
+    res.send("POST method successful")
 })
 
-app.listen('5000', () => {
-    console.log('listening on 5000')
+app.listen(5000, () => {
+    console.log("server is listening on 5000")
 })
