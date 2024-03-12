@@ -42,6 +42,23 @@ app.post('/login', (req, res) => {
     } 
 })
 
-app.listen(5000, () => {
-    console.log("server is listening on 5000")
+app.post('/api/postman/people', (req,res) => {
+    const {name} = req.body
+    if(!name){
+        return res
+            .status(400)
+            .json({success: false, msg: "please provide credentials"})
+    }
+
+    res.status(201).send({success: true, data: [...people, name]})
 })
+
+app.put('/api/postman/people/:id', (req, res) => {
+    const {id} = req.params
+    const {name} = req.body
+    console.log(id, name)
+    res.send('hello world')
+})
+
+app.listen(5000, () => {
+    console.log("server is listening on 5000")})
