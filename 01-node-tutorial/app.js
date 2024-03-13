@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-let { people } = require("./fakeData")
+
 
 //stats html
 app.use(express.static('./methods-public'))
