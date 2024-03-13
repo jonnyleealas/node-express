@@ -2,11 +2,11 @@ const express = require('express')
 const router = express.Router()
 let { people } = require("../fakeData")
 
-router.get('/api/people', (req, res) => {
+router.get('/', (req, res) => {
     res.status(200).json({success: true, data: people})
 })
 
-router.post('/api/people', (req, res) => {
+router.post('/', (req, res) => {
    const { name } = req.body
 
    if(!name){
@@ -16,7 +16,7 @@ router.post('/api/people', (req, res) => {
 })
 
 
-router.post('/api/people/postman', (req,res) => {
+router.post('/postman', (req,res) => {
    const {name} = req.body
    if(!name){
        return res
@@ -27,7 +27,7 @@ router.post('/api/people/postman', (req,res) => {
    res.status(201).send({success: true, data: [...people, name]})
 })
 
-router.put('/api/people/:id', (req, res) => {
+router.put('/:id', (req, res) => {
    const {id} = req.params
    const {name} = req.body
    console.log(id, name)
@@ -49,7 +49,7 @@ router.put('/api/people/:id', (req, res) => {
    
 })
 
-router.delete('/api/people/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
    const { id } = req.params
    const { name } = req.body
 
