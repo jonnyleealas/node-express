@@ -62,7 +62,7 @@ app.put('/api/postman/people/:id', (req, res) => {
     if(!person){
         return res  
             .status(404)
-            .json({success: false, msg: `person with id ${id} does not exsist`})
+            .json({success: false, msg: `person with id ${id} does not exist`})
     }
 
     const newPeople = people.map((person) => {
