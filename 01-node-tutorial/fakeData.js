@@ -2,13 +2,13 @@ const people = [
     {
       "userId": 1,
       "id": 1,
-      "name": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+      "name": "allen",
       "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
     },
     {
       "userId": 1,
       "id": 2,
-      "name": "qui est esse",
+      "name": "roger",
       "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
     },
     {
@@ -26,25 +26,25 @@ const people = [
     {
       "userId": 1,
       "id": 5,
-      "name": "nesciunt quas odio",
+      "name": "suzie",
       "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
     },
     {
       "userId": 1,
       "id": 6,
-      "name": "dolorem eum magni eos aperiam quia",
+      "name": "rachel",
       "body": "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae"
     },
     {
       "userId": 1,
       "id": 7,
-      "name": "magnam facilis autem",
+      "name": "hanna",
       "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas"
     },
     {
       "userId": 1,
       "id": 8,
-      "name": "dolorem dolore est ipsam",
+      "name": "clara",
       "body": "dignissimos aperiam dolorem qui eum\nfacilis quibusdam animi sint suscipit qui sint possimus cum\nquaerat magni maiores excepturi\nipsam ut commodi dolor voluptatum modi aut vitae"
     },
 
