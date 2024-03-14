@@ -14,12 +14,5 @@ app.use(express.json())
 app.use('/login', auth)
 app.use('/api/people', people)
 
-
-app.get('/', (req, res) => {
-    res.status(200).send("home page")
-})
-
-
-
 app.listen(5000, () => {
     console.log("server is listening on 5000")})

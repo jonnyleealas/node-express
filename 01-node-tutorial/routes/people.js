@@ -1,68 +1,18 @@
 const express = require('express')
 const router = express.Router()
-let { people } = require("../fakeData")
+const {
+    getPerson,
+    createPerson,
+    updatePerson,
+    deletePerson,
+} = require('../controllers/people')
 
-router.get('/', (req, res) => {
-    res.status(200).json({success: true, data: people})
-})
+router.get('/', getPerson)
 
-router.post('/', (req, res) => {
-   const { name } = req.body
+router.post('/postman', createPerson)
 
-   if(!name){
-       return res.status(400).json({success: false, msg:'fuck you add the correct shit'})
-   }
-   res.status(202).json({success:true, person:name})
-})
+router.put('/:id', updatePerson)
 
-
-router.post('/postman', (req,res) => {
-   const {name} = req.body
-   if(!name){
-       return res
-           .status(400)
-           .json({success: false, msg: "please provide credentials"})
-   }
-
-   res.status(201).send({success: true, data: [...people, name]})
-})
-
-router.put('/:id', (req, res) => {
-   const {id} = req.params
-   const {name} = req.body
-   console.log(id, name)
-   const person = people.find((person) => person.id === Number(id))
-
-   if(!person){
-       return res  
-           .status(404)
-           .json({success: false, msg: `person with id ${id} does not exist`})
-   }
-
-   const newPeople = people.map((person) => {
-       if(person.id === Number(id)){
-           person.name = name
-       }
-       return person
-   })
-   res.status(200).json({success: true, data: newPeople})
-   
-})
-
-router.delete('/:id', (req, res) => {
-   const { id } = req.params
-   const { name } = req.body
-
-   const person = people.find((person) => person.id === Number(id))
-
-   if(!person){
-       return res
-           .status(404)
-           .json({success: false, msg:"user delete"})
-   }
-
-   const newPeople = people.filter((person) => person.id !== Number(id))
-   return res.status(200).json({success: true, data: newPeople})
-})
+router.delete('/:id', deletePerson)
 
 module.exports = router
