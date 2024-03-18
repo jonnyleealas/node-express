@@ -1,3 +1,13 @@
-const connectionString = "mongodb+srv://jonnyleealas:<password>@cluster0.ah3n4xj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const mongoose = require('mongoose')
 
-const connectionString2 = "mongodb+srv://jonnyleealas:<password>@cluster0.ah3n4xj.mongodb.net/"
+const connectDb = (url) => {
+    return mongoose
+    .connect(url,{
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true,
+    })
+}
+
+module.exports = connectDb
