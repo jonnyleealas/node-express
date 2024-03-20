@@ -7,13 +7,10 @@ require('dotenv').config()
 const port = 3000
 
 // middleware
+app.use(express.static('./public'))
 app.use(express.json())
 
 // routes
-app.get('/hello', (req, res) => {
-    res.send('task app')
-})
-
 app.use('/api/v1/tasks', tasks)
 
 const start = async () => {
