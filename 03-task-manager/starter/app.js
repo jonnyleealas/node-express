@@ -3,6 +3,9 @@ const app = express()
 const tasks = require('./router/tasks')
 const connectDB = require('./db/connect')
 require('dotenv').config()
+const notFound = require('./middleware/not-found')
+const errorHandlerMiddlwware = require('./middleware/errorHandler')
+
 
 const port = 3000
 
@@ -12,6 +15,10 @@ app.use(express.json())
 
 // routes
 app.use('/api/v1/tasks', tasks)
+
+//custom error 404 middlware function
+app.use(notFound)
+app.use(errorHandlerMiddlwware)
 
 const start = async () => {
     try {
