@@ -18,7 +18,7 @@ app.use('/api/v1/tasks', tasks)
 //custom error 404 middlware function
 app.use(notFound)
 app.use(errorHandlerMiddlwware)
-const port = process.env.PORT || 3000
+const port = process.env.PORT ||3000
 
 const start = async () => {
     try {
