@@ -7,7 +7,6 @@ const notFound = require('./middleware/not-found')
 const errorHandlerMiddlwware = require('./middleware/errorHandler')
 
 
-const port = 3000
 
 // middleware
 app.use(express.static('./public'))
@@ -19,11 +18,12 @@ app.use('/api/v1/tasks', tasks)
 //custom error 404 middlware function
 app.use(notFound)
 app.use(errorHandlerMiddlwware)
+const port = process.env.PORT || 3000
 
 const start = async () => {
     try {
         await connectDB(process.env.MONGO_URI)
-        app.listen(port, console.log("listening on port 3000 ..."))
+        app.listen(port, console.log(`listening on port ${port} ...`))
     } catch (error) {
         console.log(error)
     }
