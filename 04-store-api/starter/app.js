@@ -9,6 +9,8 @@ const app = express()
 const connectDB = require('./db/connect')
 
 const productsRouter = require('./routes/products')
+
+// error handling
 const notFoundMiddleware = require('./middleware/not-found')
 const errorMiddleware = require('./middleware/error-handler')
 
