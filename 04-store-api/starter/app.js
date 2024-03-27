@@ -5,7 +5,9 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 
+// Connect mongo database
 const connectDB = require('./db/connect')
+
 const productsRouter = require('./routes/products')
 const notFoundMiddleware = require('./middleware/not-found')
 const errorMiddleware = require('./middleware/error-handler')
