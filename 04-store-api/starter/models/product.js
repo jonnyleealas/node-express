@@ -9,7 +9,7 @@ const productSchema = new mongoose.Schema({
         type: Number,
         required: [true, "product price required"],
     },
-    feartured: {
+    featured: {
         type: Boolean,
         default: false,
     },
