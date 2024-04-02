@@ -8,7 +8,7 @@ const getAllProductsStatic = async (req, res) => {
 const getAllProducts = async (req, res) => {
     const {featured} = req.query
     const queryObject = {}
-
+    console.log(queryObject, 'hello')
     if(featured){
         queryObject.featured = featured === 'true' ? true : false
     }
