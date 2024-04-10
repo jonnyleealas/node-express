@@ -30,3 +30,10 @@ const start = async () => {
 };
 
 start();
+
+// username and password in req.body
+// if both exsist create new jwt 
+// else return error
+// request must send jwt in order gain access
+// no token no get request
+// no token returns error
