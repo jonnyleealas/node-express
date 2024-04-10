@@ -2,7 +2,12 @@
 
 const login = async (req, res) => {
     const {username, password} = req.body
-    console.log(username, password)
+    if(username === "jonny" && password === "1234"){
+        
+        console.log(`hello ${username}`)
+    } else {
+        console.log(`please enter username`)
+    }
     res.send('fake login/register/signup route')
 }
 
