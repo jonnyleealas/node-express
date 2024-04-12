@@ -25,7 +25,7 @@ const dashboard = async ( req, res) => {
         throw new CustomAPIError("No token provided", 401)
     }
     const luckyNumber = Math.floor(Math.random() * 100)
-    res.status(200).json({msg:`hello, ${name}`, secret: `here is your autherized data. Your lucky number is ${luckyNumber}`})
+    res.status(200).json({msg:`hi, ${name}`, secret: `here is your autherized data. Your lucky number is ${luckyNumber}`})
 }
 
 
