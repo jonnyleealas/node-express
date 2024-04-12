@@ -17,8 +17,15 @@ const login = async (req, res) => {
 }
 
 const dashboard = async ( req, res) => {
+    const name = req.body.username
+    console.log(name)
+    const authHeader = req.headers.authorization
+
+    if(!authHeader || !authHeader.startsWith('Bearer')){
+        throw new CustomAPIError("No token provided", 401)
+    }
     const luckyNumber = Math.floor(Math.random() * 100)
-    res.status(200).json({msg:`hello, john doe`, secret: `here is your autherized data. Your lucky number is ${luckyNumber}`})
+    res.status(200).json({msg:`hello, ${name}`, secret: `here is your autherized data. Your lucky number is ${luckyNumber}`})
 }
 
 
