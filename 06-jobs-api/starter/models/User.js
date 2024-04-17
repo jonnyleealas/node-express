@@ -15,5 +15,14 @@ const UserSchema = new mongoose.Schema({
             'Please provide a valid email'
         ],
         unique: true,
+    },
+    password: {
+        type: String,
+        required: [true, 'Please provide password'],
+        minlength:3,
+        maxlength: 20,
     }
 })
+
+
+module.exports = mongoose.model('User', UserSchema)
