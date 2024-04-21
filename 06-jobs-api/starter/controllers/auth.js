@@ -1,8 +1,8 @@
 const User = require('../models/User')
 const { StatusCodes } = require('http-status-codes')
 const {BadRequestError} = require('../errors/index')
-const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
+
+
 
 
 const register = async ( req, res) => {
