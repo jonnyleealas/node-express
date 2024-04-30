@@ -12,6 +12,10 @@ const register = async ( req, res) => {
     res.status(StatusCodes.CREATED).json({user:{name:user.name}, token})
 }
 
+const getAllUsers = async (req, res) => {
+    const users = await User.find({})
+    res.status(200).json({ users })
+}
 const login = async (req, res) => {
     const {email, password} = req.body
     
@@ -37,5 +41,6 @@ const login = async (req, res) => {
 
 module.exports = {
     register,
+    getAllUsers,
     login,
 }
